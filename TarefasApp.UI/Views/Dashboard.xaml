@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TarefasApp.UI.Views.Dashboard"
+             xmlns:behaviors="clr-namespace:TarefasApp.UI.Behaviors"
+             Shell.NavBarIsVisible="False">
+    <FlexLayout 
+        Direction="Column"
+        AlignContent="Center"
+        JustifyContent="Center"
+        Padding="30">
+
+        <Grid BackgroundColor="{StaticResource White}" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label 
+                Grid.Row="0"
+                Text="Seja bem vindo à Agenda"
+                FontSize="28"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Margin="20"/>
+
+            <Label 
+                Grid.Row="1"
+                x:Name="nomeUsuario"
+                FontSize="24"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Margin="10"/>
+
+            <Label 
+                Grid.Row="2"
+                x:Name="emailUsuario"
+                FontSize="24"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Margin="10"/>
+
+            <Button 
+                Grid.Row="3"
+                x:Name="btnLogout"
+                Text="Sair da Conta"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Margin="10"/>
+
+        </Grid>
+        
+    </FlexLayout>
+
+    <ContentPage.Behaviors>
+        <behaviors:DashboardBehavior />
+    </ContentPage.Behaviors>
+    
+</ContentPage>
