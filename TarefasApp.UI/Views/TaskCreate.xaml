@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:TarefasApp.UI.Models"
+             xmlns:dataForm="clr-namespace:Syncfusion.Maui.DataForm;assembly=Syncfusion.Maui.DataForm"
+             x:Class="TarefasApp.UI.Views.TaskCreate"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.BindingContext>
+        <models:TarefasCadastroViewModel/>
+    </ContentPage.BindingContext>
+
+    <FlexLayout 
+        Direction="Column"
+        AlignContent="Center"
+        JustifyContent="SpaceEvenly">
+
+        <Grid
+            BackgroundColor="{StaticResource White}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Frame 
+                Grid.Row="0" 
+                CornerRadius="6"
+                BorderColor="LightGray" 
+                BackgroundColor="White" 
+                Margin="10" 
+                Padding="0">
+
+                <Grid 
+                    IsClippedToBounds="True"
+                    HeightRequest="700"
+                    >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Label 
+                        Grid.Row="0" 
+                        Padding="10" 
+                        HorizontalOptions="Center" 
+                        HorizontalTextAlignment="Center" 
+                        VerticalTextAlignment="Start">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Cadastro de Tarefas" FontSize="24" FontAttributes="Bold"/>
+                                <Span Text="&#x0a;"/>
+                                <Span Text="Inclua tarefas em sua conta!" FontSize="14"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <dataForm:SfDataForm x:Name="formCriarTarefa" 
+                                         LayoutType="TextInputLayout" 
+                                         Grid.Row="1" 
+                                         DataObject="{Binding TarefasCadastroRequestModel}" 
+                                         ValidationMode="PropertyChanged"></dataForm:SfDataForm>
+
+
+                    <!-- Botão de ação -->
+
+                    <Button Text="Realizar Cadastro" 
+                        x:Name="btnCriarTarefa" 
+                        Grid.Row="2"
+                        HeightRequest="40" 
+                        VerticalOptions="End" 
+                        HorizontalOptions="Fill" 
+                        Margin="20, 0, 20, 0" 
+                        CornerRadius="10" 
+                        Background="{StaticResource Primary}"/>
+
+                    <Button Text="Consultar Tarefas" 
+                        x:Name="btnConsultarTarefas" 
+                        Grid.Row="3"
+                        HeightRequest="40" 
+                        VerticalOptions="End" 
+                        HorizontalOptions="Fill" 
+                        Margin="20, 0, 20, 0" 
+                        CornerRadius="10" 
+                        Background="{StaticResource Gray100}"/>
+                    
+                </Grid>
+
+            </Frame>
+
+        </Grid>
+
+    </FlexLayout>
+</ContentPage>

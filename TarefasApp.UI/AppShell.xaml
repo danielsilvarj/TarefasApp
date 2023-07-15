@@ -5,12 +5,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:TarefasApp.UI"
     xmlns:views="clr-namespace:TarefasApp.UI.Views"
+    xmlns:sys="clr-namespace:System;assembly=netstandard"
     Shell.FlyoutBehavior="Flyout">
 
     <Shell.FlyoutHeaderTemplate>
         <DataTemplate>
             <StackLayout Padding="20">
-                <Image Source="https://www.cotiinformatica.com.br/imagens/logo-coti-informatica.png"
+                <Image Source="https://cdn-icons-png.flaticon.com/512/3194/3194346.png"
                        Aspect="AspectFit" 
                        HorizontalOptions="Center" 
                        VerticalOptions="Center" 
@@ -38,4 +39,37 @@
         Title="Dashboard Principal"
         ContentTemplate="{DataTemplate views:Dashboard}"
         Route="Dashboard"/>
+
+    <ShellContent 
+        Title="Cadastro de Tarefas"
+        ContentTemplate="{DataTemplate views:TaskCreate}"
+        Route="TaskCreate"/>
+
+    <ShellContent 
+        Title="Consulta de Tarefas"
+        ContentTemplate="{DataTemplate views:TaskList}"
+        Route="TaskList"/>
+
+    <ShellContent 
+        Title="Edição de Tarefas"
+        ContentTemplate="{DataTemplate views:TaskEdit}"
+        Route="TaskEdit"/>
+
+    <Shell.FlyoutFooter>
+        <StackLayout Background="#eee" Padding="10">
+            <Label 
+                Text="Treinamento .NET MAUI"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                />
+            
+            <Label 
+                Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:MMMM dd, yyyy}'}"
+                TextColor="Black"
+                HorizontalOptions="Center"
+                />
+        </StackLayout>
+        
+    </Shell.FlyoutFooter>
+
 </Shell>

@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using TarefasApp.Services.Models.Requests;
+
+namespace TarefasApp.UI.Models
+{
+    public class TarefasCadastroViewModel
+    {
+        public TarefasCadastroRequestModel TarefasCadastroRequestModel { get; set; }
+
+
+        public TarefasCadastroViewModel()
+        {
+            TarefasCadastroRequestModel = new TarefasCadastroRequestModel();
+        }
+    }
+}
