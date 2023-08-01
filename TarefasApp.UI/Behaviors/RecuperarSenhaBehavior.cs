@@ -36,7 +36,7 @@ namespace TarefasApp.UI.Behaviors
                     var model = (RecuperarSenhaRequestModel)_formRecuperarSenha.DataObject;
 
                     var serviceHelper = new ServicesHelper();
-                    var result = await serviceHelper.Post<RecuperarSenhaRequestModel, RecuperarSenhaResponseModel>("recuperar-senha", model);
+                    var result = await serviceHelper.Post<RecuperarSenhaRequestModel, RecuperarSenhaResponseModel>("recuperarsenha", model);
 
                     await App.Current.MainPage.DisplayAlert("Sucesso!"
                                                            , $"Olá {result.Nome}, sua solicitação de recuperação de senha foi realizada com sucesso. Verifique sua caixa de entrada!"

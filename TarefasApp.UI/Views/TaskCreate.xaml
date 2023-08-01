@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:TarefasApp.UI.Models"
              xmlns:dataForm="clr-namespace:Syncfusion.Maui.DataForm;assembly=Syncfusion.Maui.DataForm"
+             xmlns:behaviors="clr-namespace:TarefasApp.UI.Behaviors"
              x:Class="TarefasApp.UI.Views.TaskCreate"
              Shell.NavBarIsVisible="False">
     <ContentPage.BindingContext>
@@ -58,7 +59,8 @@
                                          LayoutType="TextInputLayout" 
                                          Grid.Row="1" 
                                          DataObject="{Binding TarefasCadastroRequestModel}" 
-                                         ValidationMode="PropertyChanged"></dataForm:SfDataForm>
+                                         ValidationMode="PropertyChanged"
+                                         ></dataForm:SfDataForm>
 
 
                     <!-- Botão de ação -->
@@ -90,4 +92,8 @@
         </Grid>
 
     </FlexLayout>
+
+    <ContentPage.Behaviors>
+        <behaviors:TarefasCadastroBehavior/>
+    </ContentPage.Behaviors>
 </ContentPage>

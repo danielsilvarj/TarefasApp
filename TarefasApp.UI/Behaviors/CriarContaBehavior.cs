@@ -38,7 +38,7 @@ namespace TarefasApp.UI.Behaviors
                     var model = (CriarContaRequestModel)_formCriarConta.DataObject;
 
                     var servicesHelper = new ServicesHelper();
-                    var result = await servicesHelper.Post<CriarContaRequestModel, CriarContaResponseModel>("criar-conta", model);
+                    var result = await servicesHelper.Post<CriarContaRequestModel, CriarContaResponseModel>("criarconta", model);
 
                     await App.Current.MainPage.DisplayAlert("Sucesso!"
                                                            , $"Parabens {result.Nome}, sua conta de usuário foi cadastrada com sucesso!"

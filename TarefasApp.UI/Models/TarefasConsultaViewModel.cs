@@ -13,19 +13,7 @@ namespace TarefasApp.UI.Models
 
         public TarefasConsultaViewModel()
         {
-            Tarefas = new List<TarefasConsultaResponseModel>();
-
-            for (int i = 0; i < 6; i++)
-            {
-                Tarefas.Add(new TarefasConsultaResponseModel
-                {
-                    Nome = $"Tarefa {i} Modelo - Agenda",
-                    DataHoraInicio = DateTime.Now.ToString("dd/MM/yyyy HH:mm"),
-                    DataHoraFim = DateTime.Now.ToString("dd/MM/yyyy HH:mm"),
-                    Categoria = "Categoria teste",
-                    Observacoes = "Observações Teste"
-                });
-            }
+            var auth = SecureStorage.Default.GetAsync("auth_user").Result;
         }
     }
 }

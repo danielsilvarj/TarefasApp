@@ -15,14 +15,18 @@ namespace TarefasApp.Services.Models.Requests
         public string? Nome { get; set; }
 
         [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "dd/MM/yyyy")]
+        //[DataFormDateRange(DisplayFormat = "yyyy/mm/dd", MaximumDate = "2022/07/01", MaximumDate = "2022/07/07")]
         [Display(Name = "Data e hora de início:")]
-        [Required(ErrorMessage = "Por favor, informe a data e hora de início")]
-        public string? DataInicio { get; set; }
+        [Required(ErrorMessage = "Por favor, informe a data de início")]
+        public DateTime? DataInicio { get; set; } = DateTime.Now;
 
         [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "dd/MM/yyyy")]
+        
         [Display(Name = "Data e hora de término:")]
-        [Required(ErrorMessage = "Por favor, Informe a data e hora de término")]
-        public string? DataFim { get; set; }
+        [Required(ErrorMessage = "Por favor, Informe a data de término")]
+        public DateTime? DataFim { get; set; } = DateTime.Now;
 
         [DataType(DataType.Text)]
         [Display(Name = "Selecione a categoria desta tarefa:")]
@@ -30,7 +34,7 @@ namespace TarefasApp.Services.Models.Requests
         public string? Categoria { get; set; }
 
         [DataType(DataType.MultilineText)]
-        [Display(Name = "Informe as observações:")]
-        public string? Observacoes { get; set; }
+        [Display(Name = "Informe a Descrição da tarefa:")]
+        public string? Descricao { get; set; }
     }
 }

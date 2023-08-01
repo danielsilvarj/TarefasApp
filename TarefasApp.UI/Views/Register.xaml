@@ -77,7 +77,7 @@
     </FlexLayout>
 
     <ContentPage.Behaviors>
-        <behaviors:CriarContaBehavior/>
+        <behaviors:TarefasCadastroBehavior/>
     </ContentPage.Behaviors>
     
 </ContentPage>

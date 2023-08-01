@@ -10,9 +10,10 @@ namespace TarefasApp.Services.Models.Responses
     {
         public Guid? Id { get; set; }
         public string? Nome { get; set; }
-        public string? DataHoraInicio { get; set; }
-        public string? DataHoraFim { get; set; }
+        public string? DataInicio { get; set; }
+        public string? DataFim { get; set; }
         public string? Categoria { get; set; }
-        public string? Observacoes { get; set; }
+        public string? Descricao { get; set; }
+        public Guid? UsuarioId { get; set; }
     }
 }
